@@ -112,3 +112,12 @@ super(vehicleId);
 调用父类中那个能接收 String 参数的构造方法。
 
 
+#### 泛型
+泛型：让类型先不确定，使用时再指定。
+<T>：声明一个类型占位符 T。
+泛型类：class StorageBox<T>，整个类都可以使用 T。
+泛型方法：public <T> void test(T x)，只有这个方法使用 T。
+指定类型：StorageBox<Product> 表示 T = Product。
+作用：提高代码复用性和类型安全，减少强制类型转换。
+类型检查：错误类型在编译阶段就能发现。
+<> 菱形语法：new StorageBox<>()，Java 会根据前面自动推断类型。
