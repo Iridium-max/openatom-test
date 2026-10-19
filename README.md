@@ -191,3 +191,7 @@ super（message)调用的是父类的构造方法Exception（String message)
 - throws InsufficientFundsException：声明方法可能抛出这个受检异常。
 - throw new InsufficientFundsException(...)：条件成立时，真正创建并抛出异常对象。
 throw 是动作，throws 是声明
+
+java的compareTo()方法：可以比较字符串，也可以比较数字大小
+
+put():保存和更新数据
