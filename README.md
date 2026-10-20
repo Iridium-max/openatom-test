@@ -195,3 +195,17 @@ throw 是动作，throws 是声明
 java的compareTo()方法：可以比较字符串，也可以比较数字大小
 
 put():保存和更新数据
+
+final表示不能再重新赋值
+
+synchronized:同一时间只能有一个线程操作
+
+poll：会取出并删除队列最前面的元素
+
+runnable:java提供的接口，描述一个可以在线程中执行的任务
+
+Interrupt：负责保留中断信号；interrupt（）:表示发出中断请求
+
+中断：表示让线程停止工作
+
+join():让当前线程等待制定线程执行结束
