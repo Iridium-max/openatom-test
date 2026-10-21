@@ -209,3 +209,39 @@ Interrupt：负责保留中断信号；interrupt（）:表示发出中断请求
 中断：表示让线程停止工作
 
 join():让当前线程等待制定线程执行结束
+
+AUTO_INCREMENT：自动递增
+
+VARCHAR(50)：表示字符串，最多五十个字符
+
+UNIQUE:表示不能重复
+
+DECIMAL(10, 2)：一共最多十位数字，其中小数点后最多两位
+
+STOCK:表示存储数量
+
+PRIMARY KEY 就是主键。它的作用是：唯一标识表中的每一条数据。
+
+DATETIME 表示日期和时间，例如：
+2026-10-21 08:50:00
+
+而：
+DEFAULT CURRENT_TIMESTAMP
+表示：
+如果插入订单时没有自己写时间，数据库就自动使用当前时间
+
+FOREIGN KEY (user_id) REFERENCES users(user_id)
+
+这就是外键。
+它表示：
+orders 表中的 user_id，必须对应 users 表里真实存在的 user_id。
+
+JOIN：根据相同字段，把两张表拼起来
+
+WHERE:查询条件/筛选条件
+
+GROUP BY：表示按什么什么分组
+
+WHERE  ：先筛原始数据
+GROUP BY：再分组
+HAVING ：最后筛分组后的结果
