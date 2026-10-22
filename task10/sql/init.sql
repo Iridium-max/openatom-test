@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS task10
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE task10;
+CREATE TABLE IF NOT EXISTS users (
+    id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    register_time DATETIME(6) NOT NULL,
+    CONSTRAINT uk_users_username UNIQUE (username)
+);
