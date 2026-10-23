@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>遇见 · 线上活动报名</title><link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="top"><a class="brand" href="/">遇见<span>EVENTS</span></a><div class="account"><span id="identity">游客</span><button id="loginOpen" class="outline">登录 / 注册</button><button id="logout" class="outline" hidden>退出登录</button><button id="createOpen">＋ 发起活动</button></div></header>
+  <main>
+    <section class="hero"><div class="eyebrow">MEET PEOPLE. MAKE MEMORIES.</div><h1>把兴趣，变成相遇。</h1><p>找到下一场值得参与的活动，也让你的想法成为大家的聚点。</p><span class="pill">发现 · 连接 · 参与</span></section>
+    <section class="toolbar" aria-label="活动筛选"><div><h2>探索活动</h2><p id="resultCount">正在加载活动…</p></div><form id="filters"><label class="sr-only" for="keyword">搜索标题或描述</label><input id="keyword" maxlength="100" placeholder="搜索标题或描述"><label class="sr-only" for="status">活动状态</label><select id="status"><option value="">全部状态</option><option value="UPCOMING">即将开始</option><option value="ENDED">已结束</option></select><button type="submit">搜索</button></form></section>
+    <div id="notice" role="status" aria-live="polite" hidden></div>
+    <section id="events" class="grid" aria-label="活动列表"></section>
+    <nav class="pagination" aria-label="分页"><button id="prev" class="outline">上一页</button><span id="pageInfo"></span><button id="next" class="outline">下一页</button></nav>
+    <footer>遇见 EVENTS <span>让每一次相遇，都有意义。</span></footer>
+  </main>
+  <dialog id="authDialog"><form id="authForm"><div class="dialogHead"><h2>欢迎来到遇见</h2><button type="button" class="icon" data-close="authDialog" aria-label="关闭">×</button></div><p class="muted">登录后即可发起活动和报名。</p><label>用户名<input name="username" required pattern="[a-zA-Z0-9_]{3,32}" minlength="3" maxlength="32" autocomplete="username" placeholder="3至32位字母、数字或下划线"></label><label>密码<input name="password" type="password" required minlength="8" maxlength="64" autocomplete="current-password" placeholder="8至64个字符，UTF-8不超过72字节"></label><p id="authError" class="error" role="alert"></p><div class="actions"><button type="submit" name="mode" value="register" class="outline">注册并登录</button><button type="submit" name="mode" value="login">登录</button></div></form></dialog>
+  <dialog id="eventDialog"><form id="eventForm"><div class="dialogHead"><h2 id="editorTitle">发起活动</h2><button type="button" class="icon" data-close="eventDialog" aria-label="关闭">×</button></div><input name="id" type="hidden"><label>活动标题<input name="title" required maxlength="120" placeholder="给这次相遇起个名字"></label><label>详细描述<textarea name="description" required maxlength="10000" rows="5" placeholder="活动内容、参与须知…"></textarea></label><label>举办地点<input name="location" required maxlength="255" placeholder="线下地址或线上会议链接"></label><div class="two"><label>活动时间<input name="eventTime" type="datetime-local" required></label><label>名额上限<input name="capacity" type="number" min="1" max="1000000" value="20" required></label></div><p class="muted">时间按浏览器本地时区输入。活动开始后停止报名。</p><p id="eventError" class="error" role="alert"></p><button type="submit" class="full">保存活动</button></form></dialog>
+  <dialog id="detailDialog"><div class="dialogHead"><span class="eyebrow">EVENT DETAILS</span><button class="icon" data-close="detailDialog" aria-label="关闭">×</button></div><div id="detailContent"></div></dialog>
+</body>
+</html>
